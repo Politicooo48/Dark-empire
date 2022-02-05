@@ -49,7 +49,6 @@ client.on("guildMemberRemove", member => {
             .setAuthor("Politico") 
             .setDescription("ESEMPIO") 
             .addField("Shark", "Scemo chi legge", true) 
-            .setImage("https://cdn.discordapp.com/attachments/930553618149539980/931241494990422107/IMG_2974.png") 
             .setFooter("A CASO") 
             .setTimestamp() 
         message.channel.send({embeds: [embed]})
