@@ -42,4 +42,16 @@ client.on("guildMemberRemove", member => {
         .setDescription(`Ciao ${member.toString()}, ci rivediamo presto qua in ${member.guild.name}`)
 
     client.channels.cache.get("922503525924233238").send({embeds: [embed]}); 
+
+    if (message.content == "!comando") {
+        const embed = new Discord.MessageEmbed()
+            .setTitle("Shark") //Titolo
+            .setAuthor("Politico") 
+            .setDescription("ESEMPIO") 
+            .addField("Shark", "Scemo chi legge", true) 
+            .setImage("https://cdn.discordapp.com/attachments/930553618149539980/931241494990422107/IMG_2974.png") 
+            .setFooter("A CASO") 
+            .setTimestamp() 
+        message.channel.send({embeds: [embed]})
+    }
 })
