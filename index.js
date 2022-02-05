@@ -45,12 +45,9 @@ client.on("guildMemberRemove", member => {
 
     if (message.content == "!comando") {
         const embed = new Discord.MessageEmbed()
-            .setTitle("Shark") //Titolo
+            .setTitle("Shark") 
             .setAuthor("Politico") 
             .setDescription("ESEMPIO") 
-            .addField("Shark", "Scemo chi legge", true) 
-            .setFooter("A CASO") 
-            .setTimestamp() 
         message.channel.send({embeds: [embed]})
     }
 })
