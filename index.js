@@ -22,11 +22,10 @@ client.on("messageCreate", (message) => {
     }
 })
 client.on('ready', () => {
-    client.user.setActivity('dep!help', { type: 'WATCHING' });
+    client.user.setActivity('dep!help', { type: 'LISTENING' }); 
     client.user.setActivity("dep!help", {
-        type: "dep!help",
     });
-    client.user.setStatus('idle')
+    client.user.setStatus('online')
 })
 client.on("guildMemberAdd", member => {
     if (member.user.bot) return
