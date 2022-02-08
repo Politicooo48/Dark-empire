@@ -42,12 +42,47 @@ client.on("guildMemberRemove", member => {
         .setDescription(`Ciao ${member.toString()}, ci rivediamo presto qua in ${member.guild.name}`)
 
     client.channels.cache.get("922503525924233238").send({embeds: [embed]}); 
-
-    if (message.content == "!comando") {
-        const embed = new Discord.MessageEmbed()
-            .setTitle("Shark") 
-            .setAuthor("Politico") 
-            .setDescription("ESEMPIO") 
-        message.channel.send({embeds: [embed]})
-    }
-})
+    })
+    client.on("messageCreate", message => {
+        if (message.content.startsWith("dep!clear")) {
+            if (!message.member.permissions.has("MANAGE_MESSAGES")) {
+                return message.channel.send('Non hai il permesso');
+            }
+            if (!message.guild.me.permissions.has("MANAGE_MESSAGES")) {
+                return message.channel.send('Non ho il permesso');
+            }
+            var count = parseInt(message.content.split(/\s+/)[1]);
+            if (!count) {
+                return message.channel.send("Inserisci un numero valido")
+            }
+            if (count > 100) {
+                return message.channel.send("Non puoi cancellare più di 100 messaggi")
+            }
+            message.channel.bulkDelete(count, true)
+            message.channel.send(count + " messaggi eliminati").then(msg => {
+                setTimeout(() => msg.delete(), 5000)
+            })
+        }
+    })
+    client.on("messageCreate", message => {
+        if (message.content.startsWith("dep!avatar")) {
+            if (message.content.trim() == "!avatar") {
+                var utente = message.member;
+            }
+            else {
+                var utente = message.mentions.members.first();
+            }
+            if (!utente) {
+                return message.channel.send("Utente non trovato")
+            }
+            var embed = new Discord.MessageEmbed()
+                .setTitle(utente.user.tag)
+                .setDescription("L'avatar di questo utente")
+                .setImage(utente.user.displayAvatarURL({
+                    dynamic: true,
+                    format: "png",
+                    size: 512
+                }))
+            message.channel.send({ embeds: [embed] })
+        }
+    })
