@@ -30,7 +30,7 @@ client.on('ready', () => {
 client.on("guildMemberAdd", member => {
     if (member.user.bot) return
     var embed = new Discord.MessageEmbed()
-        .setTitle("WELCOME")
+        .setTitle("BENVENUTO")
         .setDescription(`Ciao ${member.toString()}, benvenuto in ${member.guild.name}. Sei il **${member.guild.memberCount}° Membro**`)
 
     client.channels.cache.get("922503525924233238").send({embeds: [embed]}); 
@@ -38,7 +38,7 @@ client.on("guildMemberAdd", member => {
 client.on("guildMemberRemove", member => {
     if (member.user.bot) return
     var embed = new Discord.MessageEmbed()
-        .setTitle("GOODBEY")
+        .setTitle("ARRIVEDERCI")
         .setDescription(`Ciao ${member.toString()}, ci rivediamo presto qua in ${member.guild.name}`)
 
     client.channels.cache.get("922503525924233238").send({embeds: [embed]}); 
