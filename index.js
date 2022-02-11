@@ -189,19 +189,3 @@ client.on("messageCreate", message => {
         message.channel.send({ embeds: [embed] })
     }
 })
-client.on("messageCreate", message => {
-    if (message.content == "dep!serverinfo") {
-        var server = message.guild;
-        var embed = new Discord.MessageEmbed()
-            .setTitle(server.name)
-            .setDescription("Tutte le info su questo server")
-            .setThumbnail(server.iconURL())
-            .addField("Owner", client.users.cache.get(server.906918964242812968).username, true)
-            .addField("919705540219793458", server.id, true)
-            .addField("Members", server.memberCount.toString(), false)
-            .addField("Channels", server.channels.cache.size.toString(), false)
-            .addField("Server created", server.createdAt.toDateString(), true)
-            .addField("Boost level", "Level " + (server.premiumTier != "NONE" ? server.premiumTier : 0) + " (Boost: " + server.premiumSubscriptionCount + ")", true)
-        message.channel.send({ embeds: [embed] })
-    }
-})
