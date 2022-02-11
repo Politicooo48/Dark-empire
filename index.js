@@ -155,7 +155,7 @@ client.on("guildMemberRemove", member => {
     }
 })
 client.on("messageCreate", message => {
-    if (message.content.startsWith("!userinfo")) {
+    if (message.content.startsWith("dep!userinfo")) {
         if (message.content == "dep!userinfo") {
             var utente = message.member;
         }
