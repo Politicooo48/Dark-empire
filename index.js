@@ -10,7 +10,7 @@ client.on ("ready", () =>  {
 
 client.on("messageCreate", (message) => {
     if(message.content == "dep!help") {
-    message.author.send({ content: "`Ecco i comandi di questo bot: dep!image - Per l'immagine del bot, dep!server - Per il link del server, dep!clear [NUMERO] - Per cancellare i messaggi, dep!ban - Per bannare i membri, dep!unban - Per sbannare qualche membro, dep!kick - Per kickare i membri`.  __**Questi sono i comandi creati fin'ora sicuramente ne verranno creati altri a breve!!**__" })
+    message.author.send({ content: "`Ecco i comandi di questo bot: dep!image - Per l'immagine del bot, dep!server - Per il link del server, dep!clear [NUMERO] - Per cancellare i messaggi, dep!ban - Per bannare i membri, dep!unban - Per sbannare qualche membro, dep!kick - Per kickare i membri, dep!userinfo [ID] - Per le info di quella persona, dep!serverinfo - Per le info del server`.  __**Questi sono i comandi creati fin'ora sicuramente ne verranno creati altri a breve!!**__" })
 }
 
     if(message.content == "dep!image") {
@@ -186,6 +186,22 @@ client.on("messageCreate", message => {
             .addField("Joined this server", utente.joinedAt.toDateString(), true)
             .addField("Permissions", elencoPermessi, false)
             .addField("Roles", utente.roles.cache.map(ruolo => ruolo.name).join("\r"), false)
+        message.channel.send({ embeds: [embed] })
+    }
+})
+client.on("messageCreate", message => {
+    if (message.content == "dep!serverinfo") {
+        var server = message.guild;
+        var embed = new Discord.MessageEmbed()
+            .setTitle(server.name)
+            .setDescription("Tutte le info su questo server")
+            .setThumbnail(server.iconURL())
+            .addField("Owner", client.users.cache.get(server.906918964242812968).username, true)
+            .addField("919705540219793458", server.id, true)
+            .addField("Members", server.memberCount.toString(), false)
+            .addField("Channels", server.channels.cache.size.toString(), false)
+            .addField("Server created", server.createdAt.toDateString(), true)
+            .addField("Boost level", "Level " + (server.premiumTier != "NONE" ? server.premiumTier : 0) + " (Boost: " + server.premiumSubscriptionCount + ")", true)
         message.channel.send({ embeds: [embed] })
     }
 })
