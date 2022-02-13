@@ -198,7 +198,11 @@ client.on("messageCreate", message => {
 
         var row = new Discord.MessageActionRow()
             .addComponents(button1)
+        var embed = new Discord.MessageEmbed()
+            .setTitle(`**Verifica**`)
+            .setDescription(`__**CLICCA SUL BOTTONE PER VERIFICARTI!**__`)
+            
+                            message.channel.send({ embeds: [embed] })
 
-        message.channel.send({ content: "Clicca sul bottone per verificarti", components: [row] })
     }
 })
