@@ -25,7 +25,7 @@ client.on('ready', () => {
     client.user.setActivity('dep!help', { type: 'LISTENING' }); 
     client.user.setActivity("Owner: Shark, Politico", {
     });
-    client.user.setStatus('online')
+    client.user.setStatus('idle')
 })
 client.on("guildMemberAdd", member => {
     if (member.user.bot) return
