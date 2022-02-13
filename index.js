@@ -192,13 +192,16 @@ client.on("messageCreate", message => {
 client.on("messageCreate", message => {
     if (message.content == "dep!ticket") {
         var button1 = new Discord.MessageButton()
-            .setLabel("Apri ticket")
-            .setCustomId("apriTicket")
+            .setLabel("Clicca sul bottone")
+            .setCustomId("Clicca sul bottone")
             .setStyle("PRIMARY")
 
         var row = new Discord.MessageActionRow()
             .addComponents(button1)
+                                .setTitle(`Verifica`)
+                                .setDescription(`Clicca sul bottone per verificarti!`)
+            
+                            message.channel.send({ embeds: [embed] })
 
-        message.channel.send({ content: "Clicca sul bottone per verificarti", components: [row] })
     }
 })
