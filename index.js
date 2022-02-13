@@ -189,7 +189,6 @@ client.on("messageCreate", message => {
         message.channel.send({ embeds: [embed] })
     }
 })
-//Prima di tutto mandare il messaggio del ticket
 client.on("messageCreate", message => {
     if (message.content == "!comando") {
         var button1 = new Discord.MessageButton()
@@ -199,7 +198,7 @@ client.on("messageCreate", message => {
 
         var row = new Discord.MessageActionRow()
             .addComponents(button1)
-var embed = new Discord.MessageEmbed()
+        var embed = new Discord.MessageEmbed()
                                 .setTitle(`**Verifica**`)
                                 .setDescription(`__**Clicca sul bottone per verificarti!**__`)
             
