@@ -23,7 +23,7 @@ client.on("messageCreate", (message) => {
 })
 client.on('ready', () => {
     client.user.setActivity('dep!help', { type: 'LISTENING' }); 
-    client.user.setActivity("Owner: Shark, Politico", {
+    client.user.setActivity("dep!help", {
     });
     client.user.setStatus('idle')
 })
