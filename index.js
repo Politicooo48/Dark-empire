@@ -192,7 +192,7 @@ client.on("messageCreate", message => {
 client.on("messageCreate", message => {
     if (message.content == "!comando") {
         var button1 = new Discord.MessageButton()
-            .setLabel("**Cliccami per verificarti!**")
+            .setLabel("Verificati")
             .setCustomId("Cliccami per verificarti!")
             .setStyle("SECONDARY")
 
