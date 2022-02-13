@@ -189,19 +189,20 @@ client.on("messageCreate", message => {
         message.channel.send({ embeds: [embed] })
     }
 })
+//Prima di tutto mandare il messaggio del ticket
 client.on("messageCreate", message => {
-    if (message.content == "dep!ticket") {
+    if (message.content == "!comando") {
         var button1 = new Discord.MessageButton()
-            .setLabel("Clicca sul bottone")
-            .setCustomId("Clicca sul bottone")
+            .setLabel("Apri ticket")
+            .setCustomId("apriTicket")
             .setStyle("PRIMARY")
 
         var row = new Discord.MessageActionRow()
             .addComponents(button1)
-                        .setTitle(`Verifica`)
-                        .setDescription(`Clicca sul bottone per verificarti!`)
+var embed = new Discord.MessageEmbed()
+                                .setTitle(`**Verifica**`)
+                                .setDescription(`__**Clicca sul bottone per verificarti!**__`)
             
                             message.channel.send({ embeds: [embed] })
-
     }
 })
