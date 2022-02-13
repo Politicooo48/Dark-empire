@@ -192,9 +192,9 @@ client.on("messageCreate", message => {
 client.on("messageCreate", message => {
     if (message.content == "!comando") {
         var button1 = new Discord.MessageButton()
-            .setLabel("Apri ticket")
-            .setCustomId("apriTicket")
-            .setStyle("PRIMARY")
+            .setLabel("**Cliccami per verificarti!**")
+            .setCustomId("Cliccami per verificarti!")
+            .setStyle("SECONDARY")
 
         var row = new Discord.MessageActionRow()
             .addComponents(button1)
