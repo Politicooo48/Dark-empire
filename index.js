@@ -201,8 +201,9 @@ client.on("messageCreate", message => {
         var embed = new Discord.MessageEmbed()
             .setTitle(`**Verifica**`)
             .setDescription(`__**CLICCA SUL BOTTONE PER VERIFICARTI!**__`)
-            
-                            message.channel.send({ embeds: [embed] })
 
+                            message.channel.send({ embeds: [embed], components: [row]} )
+
+        
     }
 })
