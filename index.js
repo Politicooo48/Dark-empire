@@ -13,7 +13,7 @@ client.on("messageCreate", (message) => {
     message.author.send({ content: "`Ecco i comandi di questo bot: dep!image - Per l'immagine del bot, dep!server - Per il link del server, dep!clear [NUMERO] - Per cancellare i messaggi, dep!ban - Per bannare i membri, dep!unban - Per sbannare qualche membro, dep!kick - Per kickare i membri, dep!userinfo [ID] - Per le info di quella persona, dep!serverinfo - Per le info del server`.  __**Questi sono i comandi creati fin'ora sicuramente ne verranno creati altri a breve!!**__" })
 }
 
-    if(message.content == "dep/image") {
+    if(message.content == "dep!image") {
         message.channel.send("https://cdn.discordapp.com/attachments/930553618149539980/931241494990422107/IMG_2974.png")
     }
 
