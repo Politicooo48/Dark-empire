@@ -207,9 +207,4 @@ client.on("messageCreate", message => {
         
     }
 })
-client.on("interactionCreate", interaction => {
-    if(interaction.customId == "Cliccami per verificarti!") {
-    if(interaction.member.role.remove('920036793292840960'))
-    if(interaction.member.role.add('920036792156160070'))   
-    }
-})
+
